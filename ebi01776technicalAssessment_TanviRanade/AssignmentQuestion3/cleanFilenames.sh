@@ -1,4 +1,4 @@
-set -ex
+
 : ' This is a utility to sanitize file names as per customer input or predefined invalid characters
 		Author : Tanvi Ranade Date:- 13-03-2021 '
 
