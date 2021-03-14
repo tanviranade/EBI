@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualize Spectroscopy Charts</title>
+    <!-- SpeckTackle CSS containing chart stylings -->
+    <link rel="stylesheet" type="text/css" href="css/st.css">
+    <!--bootstrap CDN-->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- SpeckTackle library -->
+    <script type="text/javascript", src="js/st.js"></script>
+    <!-- SpeckTackle dependencies -->
+    <script type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
+    <script type="text/javascript", src="js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        // demonstration of SpeckTackle charts
+        var chart;
+        function nmr1 () {                       // NMR stub
+            chart = st.chart
+                .nmr()
+                .legend(true)
+                .title("NMR")
+                .xlabel("ppm")
+                .labels(true)
+                .margins([80,80,80,80]);
+
+            chart.render("#stgraph");
+            var array = st.data.array()     // data type (array)
+                .xlimits(["xMin", "xMax"])
+                .ylimits(["yMin", "yMax"])
+                .y("data");                 // one dimensional array
+            chart.load(array);
+            array.add("test.json");
+
+        }
+    </script>
+    <div id="wrap">
+        <button onclick="nmr1()">Load Chart</button>
+        <hr>
+        <div id="stgraph" class="stgraph"></div>
+    </div>
+
+
+</body>
+</html>

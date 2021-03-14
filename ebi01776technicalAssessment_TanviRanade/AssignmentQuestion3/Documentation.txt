@@ -1,0 +1,8 @@
+Utility Name :- cleanFileNames.sh
+Author:- Tanvi Ranade 
+Date:- 14 March 2021
+Description:- A utility to remove invalid characters from filenames.
+Assumption:- All input files to utility are stored in single folder and will not have same names after removing invalid characters. 
+Arguments:- -f : complete path of folder where files are stored , 
+			-i: (Optional) custom set of invalid characters( ex. files/invalid.txt) , 
+			-o :(Optional) custom set of character and its replacement (ex. files/options.txt )
